@@ -1,8 +1,8 @@
 package com.gameloft.profilematcher.application.domain.model.service;
 
-import com.gameloft.profilematcher.adapter.dto.PlayerProfileDto;
+import com.gameloft.profilematcher.application.domain.model.bo.PlayerProfile;
 
 public interface PlayerProfileService {
 
-    PlayerProfileDto getPlayerFullProfile(String playerId);
+    PlayerProfile getPlayerFullProfile(String playerId);
 }

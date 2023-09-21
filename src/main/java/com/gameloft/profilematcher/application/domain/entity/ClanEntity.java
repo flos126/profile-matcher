@@ -4,21 +4,18 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "device")
+@Table(name = "clan")
 @Getter
 @Setter
-public class DeviceEntity {
-
+public class ClanEntity {
 
        @Id
        @GeneratedValue
        private long id; // 1
-       private String model; // "apple iphone 11",
-       private String carrier; // "vodafone",
-       private String firmware; // "123"
+       private String name; // "Hello world clan"
+
 }

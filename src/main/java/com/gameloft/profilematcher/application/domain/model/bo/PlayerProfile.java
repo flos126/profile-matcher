@@ -1,40 +1,50 @@
 package com.gameloft.profilematcher.application.domain.model.bo;
 
 
-import com.gameloft.profilematcher.application.domain.model.bo.Campaign;
-import com.gameloft.profilematcher.application.domain.model.bo.Clan;
-import com.gameloft.profilematcher.application.domain.model.bo.Device;
-import com.gameloft.profilematcher.application.domain.model.bo.Inventory;
-import lombok.Builder;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+
+import static com.gameloft.profilematcher.utils.Constants.DATABASE_DATE_FORMAT;
 
 @Getter
 @Setter
-@Builder
+@NoArgsConstructor
 public class PlayerProfile {
 
-
     private String playerId; //"97983be2-98b7-11e7-90cf-082e5f28d836",
+
     private String credential; // "apple_credential",
-    private String created; // "2021-01-10 13:37:17Z",
-    private String modified; // "2021-01-23 13:37:17Z",
-    private String lastSession; // "2021-01-23 13:37:17Z",
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DATABASE_DATE_FORMAT)
+    private Date created;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DATABASE_DATE_FORMAT)
+    private Date modified;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DATABASE_DATE_FORMAT)
+    private String lastSession;
     private int totalSpent; // 400,
     private int totalRefund; // 0,
     private int totalTransactions; // 5,
-    private String lastPurchase; // "2021-01-22 13:37:17Z",
-    private List<Campaign> activeCampaigns; // "active_campaigns": [],
-    private List<Device> devices;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DATABASE_DATE_FORMAT)
+    private Date lastPurchase;
+    private List<Campaign> activeCampaigns = new ArrayList<>();
+    private List<Device> devices = new ArrayList<>();
     private int level; //3
     private String xp; // 1000,
     private long totalPlaytime; // 144,
     private String country;  //CA
     private String language; // fr,
 
-    private String birthdate; //"2000-01-10 13:37:17Z",
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DATABASE_DATE_FORMAT)
+    private Date birthdate;
     private String gender; //male,
 
     private Inventory inventory;
