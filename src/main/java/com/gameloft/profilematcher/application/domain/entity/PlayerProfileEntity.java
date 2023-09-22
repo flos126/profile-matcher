@@ -45,7 +45,4 @@ public class PlayerProfileEntity {
     private ClanEntity clan;
 
     private String _customfield; // "mycustom"
-
-    @Transient
-    private List<Campaign> activeCampaigns = new ArrayList<>(); // "active_campaigns": [],
 }

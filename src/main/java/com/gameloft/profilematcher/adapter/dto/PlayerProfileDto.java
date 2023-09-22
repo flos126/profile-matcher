@@ -3,7 +3,6 @@ package com.gameloft.profilematcher.adapter.dto;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.gameloft.profilematcher.application.domain.model.bo.Clan;
-import com.gameloft.profilematcher.application.domain.model.bo.Inventory;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -56,7 +55,7 @@ public class PlayerProfileDto {
     private String birthdate;
     private String gender; //male,
 
-    private Inventory inventory;
+    private InventoryDto inventory;
     private Clan clan;
 
     private String _customfield; // "mycustom"
